@@ -1,0 +1,43 @@
+1]Set has one subinterface, SortedSet (Figure 13-4), which adds to the Set contract a
+guarantee that its iterator will traverse the set in ascending element order.
+2]SortedSet
+was itself extended in Java 6 by the interface NavigableSet (see Figure 13-5), which adds
+methods to find the closest matches to a target element.
+
+3]The only implementation of
+SortedSet before Java 6was TreeSet
+
+4]Now Treeset<-------NavigableSet<><--------------SortestSet<>
+
+5]Thus For new client code developed for the Java 6 platform, there
+is no need to use the SortedSet interface at all,as Treeset implements Navigableset which in turns
+extends SortedSet 
+
+
+
+
+SortedSet<E>
++first() : E
++last() : E
++comparator() : Comparator<? super E>
++subSet( fromElement : <E>, toElement : <E> ) : SortedSet<E>
++headSet( toElement : <E> ) : SortedSet<E>
++tailSet( fromElement : <E> ) : SortedSet<E>
+===========================================================================================
+NavigableSet<E>
++pollFirst() : E
++pollLast() : E
++subSet( fromElement : E, fromInclusive : boolean,
+toElement : E, toInclusive : boolean ) : NavigableSet<E>
++headSet( toElement : E, inclusive : boolean ) : NavigableSet<E>
++tailSet( fromElement : E, inclusive : boolean ) : NavigableSet<E>
++ceiling( e : E ) : E
++floor( e : E ) : E
++higher( e : E ) : E
++lower( e : E ) : E
++descendingSet() : NavigableSet<E>
++descendingIterator() : Iterator<E>
+
+
+
+

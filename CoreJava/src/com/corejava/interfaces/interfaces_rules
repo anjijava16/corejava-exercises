@@ -1,0 +1,20 @@
+*one can create interface inside a class
+*one can never create an instance of an interface
+i.e Interface will always be at LHS not at RHS of =
+
+1]Interface without any method==marker interface
+
+2]Interface extending other interfaces
+2.1]Interface can always extend an interface
+2.2]Interface can extend multiple interfaces
+Example_10
+
+3]Class implementing an interface 
+Example_11
+
+4]If you add any field to an interface 
+it is static final by default
+Example_10
+
+5]Interface extending abstract/concrete classes:Example_12
+An interface can only extend another interface.

@@ -1,0 +1,39 @@
+*defines the core functionality that we expect
+of any collection other than a map.
+
+*It provides methods in four groups.
+
+1]
+Adding Elements
+boolean add(E e) // add the element e
+boolean addAll(Collection<? extends E> c) // add the contents of c
+
+2]Removing Elements
+boolean remove(Object o) // remove the element o
+void clear() // remove all elements
+boolean removeAll(Collection<?> c) // remove the elements in c
+boolean retainAll(Collection<?> c) // remove the elements *not* in c
+
+3]Querying the Contents of a Collection
+boolean contains(Object o) // true if o is present
+boolean containsAll(Collection<?> c) // true if all elements of c
+// are present in the collection
+boolean isEmpty() // true if no elements are present
+int size() // return the element count (or
+// Integer.MAX_VALUE if that is less)
+
+4]Making a Collection’s Contents Available for Further Processing
+Iterator<E> iterator() // return an Iterator over the elements
+Object[] toArray() // copy contents to an Object[]
+<T> T[] toArray(T[] t) // copy contents to a T[] (for any T)
+
+5]
+There are no concrete implementations of Collection. The class AbstractCollection,
+which partially implements it, is one of a series of skeletal implementations—including
+AbstractSet, AbstractList, and so on—which provide functionality common to the
+different concrete implementations of each interface. These skeletal implementations
+are available to help the designer of new implementations of the Framework interfaces.
+For example, Collection could serve as the interface for bags (unordered lists), and a
+programmer implementing bags could extend AbstractCollection and find most of the
+implementation work already done.
+

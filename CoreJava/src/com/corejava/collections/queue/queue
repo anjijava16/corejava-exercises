@@ -1,0 +1,43 @@
+1]A queue is a collection designed to hold elements for processing, yielding them up in
+the order in which they are to be processed.
+
+2]Many of the implementations use the
+rule that tasks are to be processed in the order in which they were submitted (First In
+First Out, or FIFO), but other rules are possible—for example, the Collections Framework
+includes queue classes whose processing order is based on task priority.
+
+3]Queue interface was introduced in Java 5, motivated in part by the need for queues in
+the concurrency utilities included in that release. A glance at the hierarchy of implementations
+shown in Figure 14-2 shows that, in fact, nearly all of the Queue implementations
+in the Collections Framework are in the package java.util.concurrent.
+
+4]
+
+Queue<E>
+boolean offer (E e) // insert the given element if possible
+
+The methods that throw an exception for an empty queue are:
+E element() // retrieve but do not remove the head element
+E remove() // retrieve and remove the head element
+
+The methods that return null for an empty queue are:
+E peek() // retrieve but do not remove the head element
+E poll() // retrieve and remove the head element
+
+5]You never use queue to traverse all the elements,you use queue
+to get the elements in particular order(FIFO,LIFO) and
+to yield elements from queue head/tail.
+
+
+******
+6]Queue is a subinterface of Collection, so it
+inherits methods that support traversal, like iterator. In fact, although these methods
+are implemented, their use is not recommended in normal situations. In the design of
+the queue classes, efficiency in traversal has been traded against fast implementation
+of the methods of Queue; in addition, queue iterators do not guarantee to return their
+elements in proper sequence and, for some concurrent queues, will actually fail in normal
+conditions
+
+
+
+

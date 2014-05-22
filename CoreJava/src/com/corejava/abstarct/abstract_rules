@@ -1,0 +1,87 @@
+1]An abstract class must have keyword 
+abstract in its declaration. 
+Below is a minimalist abstract class.
+
+public abstract class Animal {
+	
+}
+
+2]If a method without body is written in abstract class
+then it should have a keyword abstract in its signature.
+
+
+public abstract class Animal_2 {
+	public void methodWithoutBody();
+	//Above code gives an error
+    //"This method requires a body instead of a semicolon"
+}
+
+The correct one is below:
+
+public abstract class Animal_2 {
+	
+	public abstract void methodWithoutBody();
+
+}
+
+3]If a method with body is written in abstract class
+,then it should not have abstract keyword.
+public abstract class Animal_3 {
+
+	public void method_withBody(){
+		System.out.println("Hey! look at my body");
+	}
+}
+
+4]Extending Abstract class method with body:
+A child class may or may not override 
+a method with a body in abstract class
+Example_4.java
+
+
+5]Extending Abstract class having method without body i.e abstract method:
+In this case child class has to provide implementation for parent class's
+abstract method.Otherwise compiler will show error
+Example_5.java
+
+
+
+6]Multilevel inheritance in abstract classes
+A>>B>>C :C is concrete class
+6.1]How abstract method will behave
+Example_7.java
+6.2]How non abstract method will behave
+Refer Example_6.java
+
+
+
+7]abstract class implements interface:
+A class abstract or concrete can always implement an interface it can never extend it.
+Example_8.java
+"Interface is always implemented"
+
+
+8]abstract class implements multiple interfaces:same as 7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

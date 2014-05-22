@@ -1,0 +1,58 @@
+1]Primary purpose of java serialization is to write an object into a stream, 
+so that it can be transported through a network and that object can be rebuilt again. 
+When there are two different parties involved, you need a protocol to rebuild the exact 
+same object again. Java serialization API just provides you that.
+
+2]When you want to serialize an object, that respective class should implement the marker interface serializable.
+It just informs the compiler that this java class can be serialized. 
+You can tag properties that should not be serialized as transient. 
+You open a stream and write the object into it.
+
+3]java API takes care of the serialization protocol and persists the java object in a file in conformance 
+with the protocol. 
+De-serialization is the process of getting the object back from the file to its original form.
+De-serialization is the process of getting the object back from the byte stream
+
+4]static class members would not be serialized.
+
+5]serialVersionUID
+
+5.1]serialVersionUID is a must in serialization process. 
+But it is optional for the developer to add it in java source file. 
+If you are not going to add it in java source file, serialization runtime 
+will generate a serialVersionUID and associate it with the class. The 
+serialized object will contain this serialVersionUID along with other data.
+
+5.2]serialVersionUID is used to ensure that during deserialization 
+the same class (that was used during serialize process) is loaded.
+
+5.3]How serialVersionUID works?
+
+When an object is serialized, the serialVersionUID is serialized along with the other contents.
+
+Later when that is deserialized, the serialVersionUID from the deserialized object 
+is extracted and compared with the serialVersionUID of the loaded class.
+
+If the numbers do not match then, InvalidClassException is thrown.
+
+If the loaded class is not having a serialVersionUID declared, 
+then it is automatically generated using the same algorithm as before.
+
+5.4]Javadocs says,
+
+“the default serialVersionUID computation is highly sensitive to class details that may vary depending on 
+compiler implementations, and can thus result in unexpected InvalidClassExceptions during deserialization”
+Now you know why we should declare a serialVersionUID.
+Not only declaring a serialVersionUID is sufficient. 
+You must do the following two things carefully. Otherwise it defeats the purpose of having the serialVersionUID.
+
+serialVersionUID should be maintained. As and when you change anything in the class, you should upgrade the serailVersionUID.
+Try your best to declare a unique serialVersionUID.
+
+5.5]
+
+
+
+
+
+

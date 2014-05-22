@@ -1,0 +1,64 @@
+1]Subtyping is a key feature of object-oriented languages such as Java. In Java, one type
+is a subtype of another if they are related by an extends or implements clause. Here are
+some examples:
+Integer is a subtype of Number
+Double is a subtype of Number
+ArrayList<E> is a subtype of List<E>
+List<E> is a subtype of Collection<E>
+Collection<E> is a subtype of Iterable<E>
+
+2]Subtyping is transitive, meaning that if one type is a subtype of a second, and the second
+is a subtype of a third, then the first is a subtype of the third. So, from the last two lines
+in the preceding list, it follows that List<E> is a subtype of Iterable<E>. If one type is
+a subtype of another, we also say that the second is a supertype of the first. Every
+reference type is a subtype of Object, and Object is a supertype of every reference type.
+
+3]Substitution Principle: a variable of a given type may be assigned a value of any subtype
+of that type, and a method with a parameter of a given type may be invoked with an
+argument of any subtype of that type.
+
+*for assignment "=": a variable of a given type may be assigned a value of any subtype
+of that type
+(1:RHS structure should be subtype of LHS structure)
+(2:RHS type should be same as that of LHS type)
+
+
+*for method call:a method with a parameter of a given type may be invoked with an
+argument of any subtype of that type.
+
+Example_2.java
+
+
+4]when we need a collection or method to accept a given type or its sub/super type,
+we need wildcards.
+One can use wildcards to make collection work for more than a particular type
+
+4.1]Wildcards with extends:
+*when used with collection they are always used to read data,out of the collection. 
+4.2]Wildcards with super
+*when used with collection they are always used to add data to the collection.
+
+The Get and Put Principle: use an extends wildcard when you only get values out of a
+structure, use a super wildcard when you only put values into a structure, and don’t use
+a wildcard when you both get and put.
+
+
+5]Type parameters :
+void <T> print(List<T> obj)();
+*wild cards are used to broaden the range of type parameters
+void <T> print(<? extends T> obj)();
+void <T> print(<? super T> obj)();
+
+
+6]wildcard capture:
+When a generic method is invoked, the type parameter may be chosen to match the
+unknown type represented by a wildcard. This is called wildcard capture.
+
+7]Restrictions on Wildcards
+
+
+
+
+
+
+

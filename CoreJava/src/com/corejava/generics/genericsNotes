@@ -1,0 +1,37 @@
+Generics:
+An interface or class may be declared to take one or more type parameters, which are
+written in angle brackets and should be supplied when you declare a variable belonging
+to the interface or class or when you create a new instance of a class.
+
+Generics make interface or class implementations
+1]Generic(they can work with more than one type of parameters)
+2]force typed(using generics one can force them to work with only one type of parameters)
+3]they make code much more readable and with much more lesser lines
+
+
+Implementing generics by erasure has a number of important effects. 
+1] It keeps things simple, in that generics do not add anything fundamentally new. 
+2] It keeps things small, in that there is exactly one implementation of List, not one version for each type. 
+3] And it eases evolution, since the same library can be accessed in both nongeneric and generic
+forms.
+
+
+/***********************************************/
+Subtyping is a key feature of object-oriented languages such as Java. In Java, one type
+is a subtype of another if they are related by an extends or implements clause. Here are
+some examples:
+Integer is a subtype of Number
+Double is a subtype of Number
+ArrayList<E> is a subtype of List<E>
+List<E> is a subtype of Collection<E>
+Collection<E> is a subtype of Iterable<E>
+
+
+1:Substitution Principle: a variable of a given type may be assigned a value of any subtype
+of that type, and a method with a parameter of a given type may be invoked with an
+argument of any subtype of that type.
+
+
+
+
+

@@ -1,0 +1,71 @@
+1]HashSet
+1]HashSet implementation uses HashMap internally to store the values.
+2]set.add(v) ==> map.put(v,PRESENT)
+thus all set values are stored as keys of hashmap.while all values of hashmap store a dummy object called PRESENT.
+ 
+/************************/
+HashSet
+1]This class is the most commonly used implementation of Set. As the name implies, it
+is implemented by a hash table.
+2]hash table:an array in which elements are stored at a position
+derived from their contents.
+ 1]hashtab[];
+ 2]store element E.
+ 3]calculate hash. hashVal = hashFunction(E.val)
+ 4]hashtab[hashVal] = E
+
+3]An element’s position in a hash table is calculated by a hash function of its contents.
+Hash functions are designed to give, as far as possible, an even spread of results (hash
+codes) over the element values that might be stored. For example, here is code like that
+used in the String class to calculate a hash code:
+int hash = 0;
+for (char ch : str.toCharArray()) {
+hash = hash * 31 + ch;
+}
+
+4]Traditionally, hash tables obtain an index from the hash code by taking the remainder
+after division by the table length.
+
+5]A moment’s thought will show that, unless your table has more locations than there
+are values that might be stored in it, sometimes two distinct values must hash to the
+same location in the hash table.
+
+6]when
+collisions do occur, we have to have a way of keeping the colliding elements at the same
+table location or bucket. This is often done by storing them in a linked list
+
+
+7]As long as there are no collisions, the cost of inserting or retrieving an element is constant.
+As the hash table fills, collisions become more likely; assuming a good hash
+function, the probability of a collision in a lightly loaded table is proportional to its
+load, defined as the number of elements in the table divided by its capacity (the number
+of buckets). If a collision does take place, a linked list has to be created and subsequently
+traversed, adding an extra cost to insertion proportional to the number of elements in
+the list. If the size of the hash table is fixed, performance will worsen as more elements
+are added and the load increases. To prevent this from happening, the table size is
+increased by rehashing—copying to a new and larger table—when the load reaches a
+specified threshold (its load factor).
+
+
+**imp 8]Iterating over a hash table requires each bucket to be examined to see whether it is
+occupied and therefore costs a time proportional to the capacity of the hash table plus
+the number of elements it contains. Since the iterator examines each bucket in turn,
+the order in which elements are returned depends on their hash codes, so there is no
+guarantee as to the order in which the elements will be returned.
+
+9]Advantages of HashSet:
+constant time performance for the basic operations of add, remove, contains, and size.
+
+DisAdvantages of HashSet:
+Its main
+disadvantage is its iteration performance; since iterating through the table involves
+examining every bucket, its cost is proportional to the table size regardless of the size
+of the set it contains.
+
+*HashSet does not preserves insertion order,as elements 
+positions inside HashSet, are calculated by their hashcodes(hash codes calculated by hash functions which take value as input).
+
+HashSet is unsychronized and not thread-safe; its iterators are fail-fast.
+
+fail fast iterators:if iterator is scrolling a collection and another thred modifies it,
+then iterator throws an exception.

@@ -1,0 +1,28 @@
+1•	Overridden method and argument list and type shall exactly be the same
+2•	Return type shall be the subtype that is being declared in original method 
+    that is overridden in superclass, or it shall be the same.
+3.  Overridden methods argument type should be exactly same as that 
+    of supertype methods argument(Overridden methods argument type as subtype of
+    supertype methods argument type,does not work in overriding)
+4.	Method which has been declared final do not get overridden.
+5.	It is not possible to override constructors.
+6.
+If the superclass method does not declare an exception
+If the superclass method does not declare an exception, subclass overridden 
+method cannot declare the checked exception but it can declare unchecked 
+exception.
+
+7.
+If the superclass method declares an exception
+If the superclass method declares an exception, subclass overridden 
+method can declare same, subclass exception or no exception but cannot 
+declare parent exception.
+
+
+
+      
+•	Restriction is not more in case of access level as compared to access level of the overridden method. E.g, when superclass is considerd to be public, in that case overriding method present in the subclass would not be public or private. But access level might not be much restrictive in comparison with access level of overridden method.
+•	Method which has been declared static might be redeclared or not overridden
+•	Methods are not overridden if they are not inherited.
+•	Sublcass present in similar kind of package as that of instance superclass might be overridden to any method of superclass that has not been declared final or private.
+•	Subclass present in some other different package might override those methods which are declared protected or private.

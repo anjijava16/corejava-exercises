@@ -1,0 +1,31 @@
+Exception:
+An exception is an event, which occurs during the execution of a program, 
+that disrupts the normal flow of the program's instructions.
+
+checked exception:
+* These are exceptional conditions that 
+a well-written application should anticipate and recover from.
+
+eg:java.io.FileNotFoundException
+
+*All exceptions are checked exceptions, except for those 
+indicated by Error, RuntimeException, and their subclasses.
+
+error:
+*These are exceptional conditions that are external to the application, and that the 
+application usually cannot anticipate or recover from.
+
+*For example, suppose that an application successfully opens a file for input,
+but is unable to read the file because of a hardware or system malfunction. 
+The unsuccessful read will throw java.io.IOError
+
+*Errors are not subject to the Catch or Specify Requirement. 
+Errors are those exceptions indicated by Error and its subclasses.
+
+*runtime exception= These are exceptional conditions that are internal to the application, 
+and that the application usually cannot anticipate or recover from.
+
+eg.NullPointerException
+
+*Errors and runtime exceptions are collectively known as unchecked exceptions.
+
