@@ -1,1 +1,17 @@
 http://howtodoinjava.com/2012/11/08/a-guide-to-object-cloning-in-java/
+
+When object creation is expensive in system,cloning is used.
+*No constructor is called when clone method is called.
+
+Two ways to create cloning
+1]Shallow Cloning==>Field to Field copy =>
+*Works for all primitive class members.
+*Class need to implement Cloneable interface.
+*class need to override clone method.
+*instance member variable references in object are copied as it is to cloned object
+(HashCode of address in original and cloned object are same)
+
+
+2]Deep Cloning:
+*both primitive and nonprimitive class members are cloned.
+(HashCode of address in original and cloned object are different)
