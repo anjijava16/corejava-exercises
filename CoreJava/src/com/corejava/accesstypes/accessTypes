@@ -1,0 +1,7 @@
+starting with least accessible
+private:    member is accessible only in its class
+package private: member is accessible in its class and to any other class in same package
+protected:member is accessible in its class and to any other class in same package and all subclasses
+public:member is accessible to all classes.
+
+*try to keep class members private / package private
