@@ -1,0 +1,20 @@
+*Anonymous classes enable you to make your code more concise. 
+They enable you to declare and instantiate a class at the same time. 
+They are like local classes except that they do not have a name. Use them if you need 
+to use a local class only once.
+
+*The syntax of an anonymous class expression is like the invocation of a 
+constructor, except that there is a class definition contained in a block of code.
+
+*The anonymous class expression consists of the following:
+The new operator
+The name of an interface to implement or a class to extend. In this example, the anonymous class 
+is implementing the interface HelloWorld.
+Parentheses that contain the arguments to a constructor, just like a normal class 
+instance creation expression. Note: When you implement an interface, 
+there is no constructor, so you use an empty pair of parentheses, as in this example.
+A body, which is a class declaration body. More specifically, in the body, method declarations 
+are allowed but statements are not.
+
+Because an anonymous class definition is an expression, it must be part of a statement
+
