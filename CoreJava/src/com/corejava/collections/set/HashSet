@@ -10,8 +10,8 @@ is implemented by a hash table.
 2]hash table:an array in which elements are stored at a position
 derived from their contents.
  1]hashtab[];
- 2]store element E.
- 3]calculate hash. hashVal = hashFunction(E.val)
+ 2]store element E.==>hmap.put(key,E)
+ 3]calculate hash. hashVal = hashFunction(key.hashcode())
  4]hashtab[hashVal] = E
 
 3]An element’s position in a hash table is calculated by a hash function of its contents.
