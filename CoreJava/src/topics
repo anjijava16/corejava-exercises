@@ -10,3 +10,4 @@ interfaces,generics=done
 9]equals,hashcode=done
 10]String
 11]Immutable Objects
+12]final keyword
