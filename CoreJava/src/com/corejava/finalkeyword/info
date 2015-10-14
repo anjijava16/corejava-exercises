@@ -1,0 +1,7 @@
+                      final
+class              wont get inherited
+
+member variable    wont get reassigned
+
+method             wont get overridden
+
