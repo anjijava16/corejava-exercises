@@ -1,0 +1,36 @@
+public String loophole(Integer x) { List<String> ys = new LinkedList<String>();
+List xs = ys;
+xs.add(x); // compile-time unchecked warning
+return ys.iterator().next();
+}
+Here, we’ve aliased a list of strings and a plain old list. We insert an Integer into
+the list, and attempt to extract a String. This is clearly wrong. If we ignore the warning
+and try to execute this code, it will fail exactly at the point where we try to use the
+wrong type. At run time, this code behaves like:
+public String loophole(Integer x) { List ys = new LinkedList;
+List xs = ys;
+xs.add(x);
+return (String) ys.iterator().next(); // run time error
+}
+When we extract an element from the list, and attempt to treat it as a string by
+casting it to String, we will get a ClassCastException. The exact same thing happens
+with the generic version of loophole().
+The reason for this is, that generics are implemented by the Java compiler as a
+front-end conversion called erasure. You can (almost) think of it as a source-to-source
+translation, whereby the generic version of loophole() is converted to the non-generic
+version.
+As a result, the type safety and integrity of the Java virtual machine are never
+at risk, even in the presence of unchecked warnings.
+Basically, erasure gets rid of (or erases) all generic type information. All the type
+information betweeen angle brackets is thrown out, so, for example, a parameterized
+type like List<String> is converted into List. All remaining uses of type variables are
+replaced by the upper bound of the type variable (usually Object). And, whenever the
+resulting code isn’t type-correct, a cast to the appropriate type is inserted, as in the last
+line of loophole.
+12
+The full details of erasure are beyond the scope of this tutorial, but the simple
+description we just gave isn’t far from the truth. It’s good to know a bit about this,
+especially if you want to do more sophisticated things like converting existing APIs to
+use generics (see section 10), or just want to understand why things are the way they
+are.
+
