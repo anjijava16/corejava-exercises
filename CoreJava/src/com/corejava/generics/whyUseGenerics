@@ -29,7 +29,8 @@ The other thing to pay attention to is that the cast is gone on line 3’.
 Now, you might think that all we’ve accomplished is to move the clutter around.
 Instead of a cast to Integer on line 3, we have Integer as a type parameter on line 1’.
 However, there is a very big difference here. The compiler can now check the type
-correctness of the program at compile-time. When we say that myIntList is declared
+correctness of the program at compile-time(ENFORCE TYPE CHECKING AT COMPILE TIME). 
+When we say that myIntList is declared
 with type List<Integer>, this tells us something about the variable myIntList, which
 holds true wherever and whenever it is used, and the compiler will guarantee it. In
 contrast, the cast tells us something the programmer thinks is true at a single point in
