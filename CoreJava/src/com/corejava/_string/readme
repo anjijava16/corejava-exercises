@@ -1,0 +1,14 @@
+1]String object is nothing but a wrapper written on char[].
+2]string constant pool
+3]two references to same String are actually pointing to same String literal on String constant pool
+String a = "abc";
+String b = "abc";
+String c = new String("abc");
+
+hashcode of a.char[] matches to b.char[] and c.char[]
+
+4]Why String is immutable
+
+
+https://dzone.com/articles/string-memory-internals
+why String is immutable
