@@ -1,0 +1,3 @@
+1]If no constructor is written in class then compiler provides a default constructor.
+2]Even if a single constructor is written then compiler does not add a constructor
+//try uncommenting the customized constructor it will give you error creating Employee instance.
