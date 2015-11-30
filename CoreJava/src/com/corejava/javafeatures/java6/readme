@@ -1,0 +1,8 @@
+- Improved web service support through JAX-WS JDBC 4.0 support
+
+- Java compiler API: an API allowing a java program to select and invoke a java compiler programmatically.
+
+- Upgrade of JAXB to version 2.0: including integration of a stax parser.
+
+- Support for pluggable annotations
+

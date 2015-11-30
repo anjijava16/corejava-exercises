@@ -1,0 +1,26 @@
+Generics: provides compile-time (static) type safety for collections and eliminates the need for most typecasts (type conversion).
+
+- Metadata: also called annotations; allows language constructs such as classes and methods to be tagged with additional data, which can then be processed by metadata-aware utilities.
+
+- Autoboxing/unboxing: automatic conversions between primitive types (such as int) and primitive wrapper classes (such as integer).
+
+- Enumerations: the enum keyword creates a typesafe, ordered list of values (such as day.monday, day.tuesday, etc.). Previously this could only be achieved by non-typesafe constant integers or manually constructed classes (typesafe enum pattern).
+
+- Swing: new skinnable look and feel, called synth.
+
+- Var args: the last parameter of a method can now be declared using a type name followed by three dots (e.g. Void drawtext(string... Lines)). In the calling code any number of parameters of that type can be used and they are then placed in an array to be passed to the method, or alternatively the calling code can pass an array of that type.
+
+- Enhanced for each loop: the for loop syntax is extended with special syntax for iterating over each member of either an array or any iterable, such as the standard collection classesfix the previously broken semantics of the java memory model, which defines how threads interact through memory.
+
+- Automatic stub generation for rmi objects.
+
+- Static imports concurrency utilities in package java.util.concurrent.
+
+- Scanner class for parsing data from various input streams and buffers.
+
+- Assertions
+
+- StringBuilder class (in java.lang package)
+
+- Annotations
+

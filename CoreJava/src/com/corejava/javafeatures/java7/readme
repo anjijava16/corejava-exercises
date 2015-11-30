@@ -1,0 +1,14 @@
+1) Type inference
+Map<String, List<String>> employeeRecords =  new HashMap<>();
+
+2)String in switch statement
+
+3)try-with-resources statement
+
+4)Fork and join framework
+
+5)Catching Multiple Exception Type in Single Catch Block
+
+6)
+Java NIO
+
