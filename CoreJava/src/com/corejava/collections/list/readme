@@ -1,0 +1,33 @@
+List<E> interface:
+A List can have duplicates and it can preserve insertion order
+
+1]Positional Access Methods that access elements based on their numerical position in
+the list:
+void add(int index, E e) // add element e at given index
+boolean addAll(int index, Collection<? extends E> c)
+// add contents of c at given index
+E get(int index) // return element with given index
+E remove(int index) // remove element with given index
+E set(int index, E e) // replace element with given index by e
+
+
+2]Search Methods that search for a specified object in the list and return its numerical
+position. These methods return -1 if the object is not present:
+int indexOf(Object o) // return index of first occurrence of o
+int lastIndexOf(Object o) // return index of last occurrence of o
+
+3]Range-View A method that gets a view of a range of the list:
+List<E> subList(int fromIndex, int toIndex)
+// return a view of a portion of the list
+
+As with queues, the first question to ask
+is whether your application requires thread safety. If so, you should use CopyOnWriteAr
+rayList, if you can—that is, if writes to the list will be relatively infrequent. If not, you
+will have to use a synchronized wrapper (see Section 17.3.1) around ArrayList or
+LinkedList.
+For most list applications the choice is between ArrayList and LinkedList, synchronized
+or not. Once again, your decision will depend on how the list is used in practice.
+If set and get predominate, or element insertion and removal is mainly at the end of
+the list, then ArrayList will be the best choice. If, instead, your application needs to
+frequently insert and remove elements near the start of the list as part of a process that
+uses iteration, LinkedList may be better.
